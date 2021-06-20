@@ -1,0 +1,246 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+             {% for message in app.flashes('success')%}
+                    <div class="alert alert-success">
+                        {{message}}
+                    </div>
+            {% endfor%}
+            <h1>Nos Services</h1>
+            <span>La Microfinance a l'ere du Numerique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-services">
+      <div class="container">
+        <div class="row" id="tabs">
+          <div class="col-md-4">
+            <ul>
+              <li><a href='#tabs-1'>Creer Un Compte NEW MONEY <i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-2'>Depots à vue et comptes courant  <i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-3'>Accounting Service <i class="fa fa-angle-right"></i></a></li>
+              <li><a href='#tabs-4'>Overall Evaluation <i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <img src="assets/images/single_service_01.jpg" alt="">
+                <h4>Veiller Remplir le Formulaire suivant  Pour Creer votre compte</h4>
+                {{form_start(formCompte)}}
+                      {{form_row(formCompte.Agence, {'attr': {'placeholder': "Titre de l'article "}})}}
+                      {{form_row(formCompte.Nom, {'attr': {'placeholder': " Entrer Votre Nom "}})}}
+                      {{form_row(formCompte.prenom, {'attr': {'placeholder': "  Entrer Votre Prenom "}})}}
+                      {{form_row(formCompte.Type_compte, {'attr': {'placeholder': "image de l'article "}})}}
+                      {{form_row(formCompte.numero_telephone, {'attr': {'placeholder': " Entrer Votre Numero de telephone "}})}}
+                      {{form_row(formCompte.numero_cni, {'attr': {'placeholder': " Entrer Votre Identifiant de CNI"}})}} 
+                       {{form_row(formCompte.imageFile, {'attr': {'placeholder': " Selectionner votre photos"}})}}
+
+                       {{form_row(formCompte.username, {'attr': {'placeholder': " Entrer Votre Identifiant de CNI"}})}}
+                      {{form_row(formCompte.email, {'attr': {'placeholder': " Entrer Votre Identifiant de CNI"}})}}
+                      {{form_row(formCompte.password, {'attr': {'placeholder': " Entrer Votre Identifiant de CNI"}})}}
+
+                      <button type="submit" class="btn btn-success">Creer</button>
+                {{form_end(formCompte)}}
+              </article>
+              <article id='tabs-2'>
+                <img src="assets/images/single_service_02.jpg" alt="">
+                <h4> Depots à vue et comptes courant </h4>
+                  <ol>
+                      <a href=""></a>
+                  </ol>
+                <br><br>Pellentesque pretium, massa at placerat vehicula, neque turpis pulvinar tortor, eget convallis lorem odio non tortor. Donec massa est, fermentum sit amet felis ac, maximus luctus elit. Vivamus aliquet, dolor id imperdiet imperdiet, dui diam aliquet dui, a euismod metus enim ac velit. Vivamus eu tristique odio, vel tristique quam.</p>
+              </article>
+              <article id='tabs-3'>
+                <img src="assets/images/single_service_03.jpg" alt="">
+                <h4>Accounting Service</h4>
+                <p>Mauris lobortis quam id dictum dignissim. Donec pellentesque erat dolor, cursus dapibus turpis hendrerit quis. Suspendisse at suscipit arcu. Nulla sed erat lectus. Nulla facilisi. In sit amet neque sapien. Donec scelerisque mi at gravida efficitur. Nunc lacinia a est eu malesuada. Curabitur eleifend elit sapien, sed pulvinar orci luctus eget. 
+                <br><br>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vel ultrices nulla, ac tincidunt eros. Aenean quis tellus velit. Praesent pretium justo non auctor condimentum.</p>
+              </article>
+              <article id='tabs-4'>
+                <img src="assets/images/single_service_04.jpg" alt="">
+                <h4>Overall Evaluation</h4>
+                <p>Integer vehicula sapien quis dolor efficitur, eget molestie eros tempus. Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis. Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. 
+                <br><br>Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique. Etiam suscipit ante a odio consequat, in ornare lacus suscipit. Cras ac libero massa. Quisque rhoncus velit feugiat vulputate mollis. Donec nisl eros, malesuada sed nisi id, condimentum condimentum quam.</p>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="callback-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Un Soucis ?  <em>Ecrivez Nous</em></h2>
+              <span>Veillez Remplir le Formulaire Suivant: </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="contact-form">
+              <form id="contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="partners">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+               <center><h1 >  Nos Partenaires </h1></center><br>
+            <div class="owl-partners owl-carousel">
+           
+              <div class="partner-item">
+                <img src="{{asset('/Assets/images/UBA-1.png')}}" title="1" alt="1">
+              </div>
+              
+              <div class="partner-item">
+                <img src="{{asset('/Assets/images/CNPS.png')}}" title="2" alt="2">
+              </div>
+              
+              <div class="partner-item">
+                <img src="{{asset('/Assets/images/jade.png')}}" title="3" alt="3">
+              </div>
+              
+              <div class="partner-item">
+                <img src="assets/images/client-01.png" title="4" alt="4">
+              </div>
+              
+              <div class="partner-item">
+                <img src="assets/images/client-01.png" title="5" alt="5">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-item">
+             <img src="{{asset('/Assets/images/logo-1.jpg')}}" alt="">
+            <p>Faite un tour chez nous juste par curiosite et vous y resterez par satisfaction.</p>
+            <ul class="social-icons">
+              <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>COMPTES  NEW MONEY</h4>
+            <ul class="menu-list">
+              <li><a href="#">Compte Noel</a></li>
+              <li><a href="#">Compte New Finance -CASH</a></li>
+              <li><a href="#">Compte capital depart </a></li>
+              <li><a href="#">Compte tabaski</a></li>
+              <li><a href="#">Compte Moubarak</a></li>
+              <li><a href="#">Compte classique</a></li>
+              <li><a href="#">Compte bloqué</a></li>
+              <li><a href="#">Compte Diaspora</a></li>
+              <li><a href="#">Compte credit Semaine</a></li>
+              <li><a href="#">Compte Scolaire</a></li>
+              <li><a href="#">Compte Salaire</a></li>
+              <li><a href="#">Compte Courant PP</a></li>
+              <li><a href="#">Compte Courant PME ET ETS</a></li>
+              <li><a href="#">Tontine NEW MONEY  </a></li>
+              <li><a href="#">Compte Agropastoral</a></li>
+              <li><a href="#">Compte Maladie</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>PLUS INFOS</h4>
+            <ul class="menu-list">
+              <li><a href="#">Qui Sommes Nous ?</a></li>
+              <li><a href="#">Comment Travaillons Nous ?</a></li>
+              <li><a href="#">Besoin Aide ?</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item last-item">
+            <h4>Contacter Nous</h4>
+            <div class="contact-form">
+              <form id="contact footer-contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="filled-button">Envoyer le Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Copyright &copy; 2021 New Money Co., Ltd.
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

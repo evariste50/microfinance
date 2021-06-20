@@ -1,0 +1,22 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">{% endblock %} {% block title %}Log in!{% endblock %} {% block body %}
+<div class="container">
+    <h1> Veillez remplir le formulaire pour connecter a votre Profile de Compte </h1>
+
+    <form action="{{path('login')}}" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder=" Entrer votre Username " required name="_username">
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder=" Entrer votre Mot de Passe " required name="_password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">
+                Connexion !!
+            </button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
